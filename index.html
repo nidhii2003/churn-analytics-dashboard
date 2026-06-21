@@ -3,287 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Analytics Command Center</title>
+    <title>Enterprise Streaming ETL & Retention Control Engine</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-[#0b0f19] text-slate-200 min-h-screen font-sans antialiased selection:bg-indigo-500 selection:text-white">
+<body class="bg-[#080b11] text-slate-300 min-h-screen font-sans antialiased selection:bg-indigo-500 selection:text-white">
 
-    <header class="border-b border-slate-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0 z-50 transition-all">
+    <header class="border-b border-slate-900 bg-[#080b11]/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3 group">
-                <div class="h-9 w-9 bg-gradient-to-tr from-indigo-600 to-violet-500 rounded-xl flex items-center justify-center font-black text-white shadow-lg shadow-indigo-500/20 transform group-hover:rotate-6 transition-transform">
-                    📊
+            <div class="flex items-center space-x-3">
+                <div class="h-9 w-9 bg-gradient-to-tr from-indigo-600 to-cyan-500 rounded-xl flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/10 animate-pulse">
+                    ⚙️
                 </div>
                 <div>
-                    <span class="font-bold text-base tracking-tight text-white block">RETENTION.AI</span>
-                    <span class="text-[10px] text-slate-500 font-mono tracking-wider uppercase block">Predictive Engine</span>
+                    <span class="font-bold text-xs font-mono tracking-wider text-white block">STREAM_ETL // ENGINE_V2</span>
+                    <span class="text-[9px] text-emerald-400 font-mono tracking-widest uppercase block flex items-center gap-1">
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 inline-block animate-ping"></span> PIPELINE ACTIVE
+                    </span>
                 </div>
             </div>
-            <div class="hidden md:flex items-center space-x-2 font-mono">
-                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-sm">ATS SCORE: 94%</span>
-                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 shadow-sm">NODE.JS LAYER READY</span>
-                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20 shadow-sm">DYNAMIC DOM</span>
+            <div class="flex items-center space-x-3">
+                <button onclick="togglePipeline()" id="pipelineBtn" class="bg-rose-600 hover:bg-rose-500 text-white font-mono font-bold text-[10px] px-3 py-1.5 rounded border border-rose-500/20 cursor-pointer transition-colors">
+                    ⏸ PAUSE STREAM
+                </button>
+                <span class="hidden md:inline px-2.5 py-1 rounded text-[10px] font-mono font-bold bg-slate-900 border border-slate-800 text-slate-400">ATS LEVEL: SENIOR ARCHITECT</span>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
         
-        <section class="relative overflow-hidden bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-sm">
-            <div class="absolute -right-20 -top-20 w-60 h-60 bg-indigo-500/5 blur-[100px] rounded-full pointer-events-none"></div>
-            <div class="absolute -left-20 -bottom-20 w-60 h-60 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none"></div>
-            
-            <h1 class="text-2xl font-black tracking-tight text-white mb-2">Subscription Churn Optimization Ecosystem</h1>
-            <p class="text-slate-400 text-sm max-w-4xl leading-relaxed mb-5">
-                This diagnostic control interface monitors transactional anomalies, extracts qualitative customer drop-off logic, and aggregates financial data metrics to isolate operational volatility.
-            </p>
-            <div class="bg-[#070a13] p-4 rounded-xl border border-slate-800/60 relative">
-                <span class="text-[10px] font-bold uppercase tracking-widest text-indigo-400 block mb-1.5 font-mono">ATS Experience Statement (STAR Method Copy/Paste):</span>
-                <p class="text-xs text-slate-300 italic leading-relaxed font-sans">
-                    "Architected an interactive revenue operations control dashboard utilizing JavaScript and Tailwind CSS to process multi-tier user retention lifecycles. Integrated predictive risk calculations and built dynamic filtering controls, deploying data structures capable of forecasting a 14% retention rate optimization."
-                </p>
-            </div>
-        </section>
-
-        <section class="bg-gradient-to-r from-slate-900/60 to-slate-900/20 border border-slate-800/80 p-5 rounded-2xl shadow-xl">
-            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-                <div class="max-w-xl">
-                    <h3 class="text-sm font-bold text-white flex items-center gap-2">
-                        <span class="text-indigo-400">💡</span> Corporate ROI Run-Rate Simulator
-                    </h3>
-                    <p class="text-xs text-slate-400 mt-0.5">Adjust the predictive retention factor threshold to quantify saved operational capital in real time.</p>
-                </div>
-                <div class="w-full lg:w-auto flex flex-col sm:flex-row items-center gap-4 flex-1 justify-end">
-                    <div class="w-full max-w-xs">
-                        <input type="range" id="roiSlider" min="0" max="100" value="25" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-indigo-500" oninput="calculateROI()">
-                        <div class="flex justify-between text-[9px] font-mono text-slate-500 mt-1">
-                            <span>0% Saved</span>
-                            <span>100% Mitigated</span>
-                        </div>
-                    </div>
-                    <div class="bg-[#070a13] border border-slate-800/80 px-5 py-2.5 rounded-xl text-center min-w-[160px]">
-                        <span class="text-[9px] font-mono text-slate-500 uppercase tracking-wider block">Capital Recovered</span>
-                        <span id="roiResult" class="text-base font-mono font-bold text-emerald-400">$0.00</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="bg-slate-900/30 border border-slate-800/80 hover:border-slate-700/80 p-5 rounded-xl transition-all duration-300 shadow-sm group">
-                <p class="text-[10px] font-mono font-semibold text-slate-500 uppercase tracking-wider">Monitored Pool</p>
-                <p class="text-2xl font-black text-white mt-1 group-hover:text-indigo-400 transition-colors" id="kpi-users">0</p>
-                <div class="w-full bg-slate-800 h-[2px] mt-2.5 rounded-full overflow-hidden"><div class="bg-indigo-500 h-full w-3/4"></div></div>
+            <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-xl">
+                <span class="text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wider block">Ingested Records Count</span>
+                <span class="text-2xl font-mono font-black text-white mt-1 block" id="kpi-ingested">0</span>
+                <span class="text-[9px] text-indigo-400 font-mono mt-0.5 block" id="kpi-rate">+2.5s streaming interval</span>
             </div>
-            <div class="bg-slate-900/30 border border-slate-800/80 hover:border-slate-700/80 p-5 rounded-xl transition-all duration-300 shadow-sm group">
-                <p class="text-[10px] font-mono font-semibold text-slate-500 uppercase tracking-wider">Retention Target</p>
-                <p class="text-2xl font-black text-emerald-400 mt-1" id="kpi-retention">0%</p>
-                <div class="w-full bg-slate-800 h-[2px] mt-2.5 rounded-full overflow-hidden"><div class="bg-emerald-500 h-full w-11/12"></div></div>
+            <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-xl">
+                <span class="text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wider block">Live Mitigated Capital</span>
+                <span class="text-2xl font-mono font-black text-emerald-400 mt-1 block" id="kpi-mitigated">$0.00</span>
+                <span class="text-[9px] text-slate-500 font-mono mt-0.5 block">Triggered by simulator slider</span>
             </div>
-            <div class="bg-slate-900/30 border border-slate-800/80 hover:border-slate-700/80 p-5 rounded-xl transition-all duration-300 shadow-sm group">
-                <p class="text-[10px] font-mono font-semibold text-slate-500 uppercase tracking-wider">Gross Attrition</p>
-                <p class="text-2xl font-black text-rose-400 mt-1" id="kpi-churn">0%</p>
-                <div class="w-full bg-slate-800 h-[2px] mt-2.5 rounded-full overflow-hidden"><div class="bg-rose-500 h-full w-1/12"></div></div>
+            <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-xl">
+                <span class="text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wider block">High Risk Outliers Flagged</span>
+                <span class="text-2xl font-mono font-black text-rose-400 mt-1 block" id="kpi-outliers">0</span>
+                <span class="text-[9px] text-rose-500/60 font-mono mt-0.5 block">Risk score threshold > 80%</span>
             </div>
-            <div class="bg-slate-900/30 border border-slate-800/80 hover:border-slate-700/80 p-5 rounded-xl transition-all duration-300 shadow-sm group">
-                <p class="text-[10px] font-mono font-semibold text-slate-500 uppercase tracking-wider">At-Risk MRR Pool</p>
-                <p class="text-2xl font-black text-amber-400 mt-1" id="kpi-revenue">$0</p>
-                <div class="w-full bg-slate-800 h-[2px] mt-2.5 rounded-full overflow-hidden"><div class="bg-amber-500 h-full w-1/2"></div></div>
+            <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-xl">
+                <span class="text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wider block">Aggregated Pool Value (MRR)</span>
+                <span class="text-2xl font-mono font-black text-amber-400 mt-1 block" id="kpi-mrr">$0</span>
+                <span class="text-[9px] text-slate-500 font-mono mt-0.5 block">Active cache allocation</span>
+            </div>
+        </section>
+
+        <section class="bg-slate-900/20 border border-slate-800 p-4 rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="max-w-md">
+                <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Algorithmic Predictive Churn Shield Mitigation Factor</h4>
+                <p class="text-[11px] text-slate-500 mt-0.5">Adjust the hypothetical mitigation slider to re-calculate capital protection across the active streaming buffer matrix.</p>
+            </div>
+            <div class="w-full md:w-auto flex items-center gap-4 flex-1 justify-end">
+                <input type="range" id="roiSlider" min="0" max="100" value="40" class="w-full max-w-xs h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-indigo-500" oninput="runDataPipelineCalculations()">
+                <span id="sliderDisplay" class="text-xs font-mono bg-slate-900 px-2 py-1 border border-slate-800 rounded text-slate-300 min-w-[50px] text-center">40%</span>
             </div>
         </section>
 
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="lg:col-span-2 bg-slate-900/20 border border-slate-800/80 p-5 rounded-xl flex flex-col justify-between">
-                <div>
-                    <h3 class="text-sm font-bold text-white tracking-tight">Financial Timeline Run-Rate vs Churn Vector</h3>
-                    <p class="text-[11px] text-slate-400 mt-0.5 mb-4">Core graphical correlation mapping transaction records across explicit operations months.</p>
-                </div>
-                <div class="h-60 relative w-full">
-                    <canvas id="analyticsChart"></canvas>
-                </div>
-            </div>
-            <div class="bg-slate-900/20 border border-slate-800/80 p-5 rounded-xl flex flex-col justify-between">
-                <div>
-                    <h3 class="text-sm font-bold text-white tracking-tight">Categorical Churn Drivers</h3>
-                    <p class="text-[11px] text-slate-400 mt-0.5 mb-4">Structural metric breakdown derived from user survey log files.</p>
-                </div>
-                <div class="h-56 relative w-full flex items-center justify-center">
-                    <canvas id="donutChart"></canvas>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-slate-900/20 border border-slate-800/80 rounded-xl overflow-hidden shadow-2xl">
-            <div class="p-5 border-b border-slate-800 bg-slate-900/40 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <div>
-                    <h3 class="text-sm font-bold text-white tracking-tight">High Risk Customer Segment Cohort</h3>
-                    <p class="text-[11px] text-slate-400 mt-0.5">Real-time dynamic array query isolation evaluating profiles over a 65% risk threshold.</p>
-                </div>
-                <div class="flex items-center space-x-2 self-end sm:self-center">
-                    <select id="tierFilter" onchange="renderTable()" class="bg-[#070a13] border border-slate-800 text-[11px] rounded-lg px-3 py-2 text-slate-300 focus:outline-none focus:border-indigo-500 cursor-pointer font-medium">
-                        <option value="All">All Subscription Tiers</option>
-                        <option value="Premium">Premium Tier Only</option>
-                        <option value="Standard">Standard Tier Only</option>
-                        <option value="Basic">Basic Tier Only</option>
-                    </select>
-                    <button onclick="exportTableToCSV()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-[11px] px-3 py-2 rounded-lg transition-all duration-200 flex items-center gap-1.5 shadow-md shadow-indigo-600/10 cursor-pointer">
-                        📥 Export CSV
-                    </button>
-                </div>
-            </div>
             
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse text-xs">
-                    <thead>
-                        <tr class="bg-[#070a13]/60 border-b border-slate-800 text-slate-400 font-mono font-semibold uppercase tracking-wider text-[10px]">
-                            <th class="p-4">Customer Signature ID</th>
-                            <th class="p-4">Account Profile Tier</th>
-                            <th class="p-4">Account Tenure</th>
-                            <th class="p-4">Contract MRR Value</th>
-                            <th class="p-4">Churn Probability Score</th>
-                            <th class="p-4">Operational Status Vector</th>
-                        </tr>
-                    </thead>
-                    <tbody id="data-table-body" class="divide-y divide-slate-800/40 text-slate-300 font-sans">
-                        </tbody>
-                </table>
+            <div class="lg:col-span-2 bg-slate-900/20 border border-slate-800 rounded-xl overflow-hidden flex flex-col justify-between">
+                <div class="p-4 border-b border-slate-800 bg-slate-900/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                    <div>
+                        <h3 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Streaming Cluster Target Cache</h3>
+                        <p class="text-[10px] text-slate-500 mt-0.5">Displaying the most recent active risk arrays currently held in client-side memory stack.</p>
+                    </div>
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <select id="tierFilter" onchange="renderActiveGrid()" class="bg-[#0c0f17] border border-slate-800 text-[10px] rounded px-2 py-1 text-slate-300 font-mono focus:outline-none focus:border-indigo-500 cursor-pointer w-full sm:w-auto">
+                            <option value="All">ALL_TIERS</option>
+                            <option value="Premium">PREMIUM_ONLY</option>
+                            <option value="Standard">STANDARD_ONLY</option>
+                            <option value="Basic">BASIC_ONLY</option>
+                        </select>
+                        <button onclick="triggerCSVGeneration()" class="bg-indigo-600/20 hover:bg-indigo-600 border border-indigo-500/30 text-indigo-400 hover:text-white font-mono text-[10px] px-2.5 py-1 rounded transition-colors whitespace-nowrap cursor-pointer">
+                            EXPORT_CSV
+                        </button>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto flex-1 min-h-[340px]">
+                    <table class="w-full text-left border-collapse text-[11px]">
+                        <thead>
+                            <tr class="bg-[#0b0e14] border-b border-slate-800 text-slate-500 font-mono font-semibold uppercase tracking-wider">
+                                <th class="p-3">UID SIGNATURE</th>
+                                <th class="p-3">TIER</th>
+                                <th class="p-3">TENURE</th>
+                                <th class="p-3">VALUATION (MRR)</th>
+                                <th class="p-3">RISK VECTOR</th>
+                                <th class="p-3">ANOMALY EXCEPTION DIAGNOSTIC</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stream-table-body" class="divide-y divide-slate-800/40 text-slate-300 font-mono">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-slate-900/20 border border-slate-800 p-4 rounded-xl h-48 flex flex-col justify-between">
+                    <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Real-time Churn Breakdown Allocation</span>
+                    <div class="h-36 relative w-full flex items-center justify-center">
+                        <canvas id="donutChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/20 border border-slate-800 p-4 rounded-xl h-52 flex flex-col justify-between">
+                    <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Raw Streaming Data Packet Terminal View</span>
+                    <div class="bg-[#04060a] border border-slate-900 rounded p-2.5 h-36 overflow-y-auto text-[9px] font-mono text-cyan-400/90 scrollbar-thin leading-relaxed selection:bg-slate-800">
+                        <pre id="json-debugger" class="whitespace-pre-wrap font-mono">// Initializing message queue consumer runtime context...</pre>
+                    </div>
+                </div>
             </div>
         </section>
-
     </main>
 
     <script>
-        // Immersive array dataset matching schema logic 
-        const mockCustomerDataset = [
-            { id: "USR-9021", tier: "Premium", tenure: 14, mrr: 149, score: 88, status: "Critical Ticket Overdue" },
-            { id: "USR-4310", tier: "Standard", tenure: 3,  mrr: 79,  score: 74, status: "Failed Credit Alert" },
-            { id: "USR-1192", tier: "Basic",    tenure: 2,  mrr: 29,  score: 93, status: "Zero Activity Logged" },
-            { id: "USR-7761", tier: "Premium", tenure: 18, mrr: 149, score: 69, status: "Downgrade Initiated" },
-            { id: "USR-5491", tier: "Standard", tenure: 5,  mrr: 79,  score: 82, status: "Failed Credit Alert" },
-            { id: "USR-8820", tier: "Premium", tenure: 1,  mrr: 149, score: 96, status: "Immediate Drop-off" },
-            { id: "USR-3301", tier: "Basic",    tenure: 8,  mrr: 29,  score: 71, status: "Zero Activity Logged" }
+        // 1. Initial Cluster Memory Cache Setup
+        let pipelineActive = true;
+        let streamTimer = null;
+        let recordIncrementCounter = 0;
+        
+        let streamingClusterCache = [
+            { uid: "USR-8820", tier: "Premium", tenure: 1,  mrr: 149, risk: 96, context: "Immediate Drop-off Flag" },
+            { uid: "USR-9021", tier: "Premium", tenure: 14, mrr: 149, risk: 88, context: "Critical Overdue Ticket" },
+            { uid: "USR-5491", tier: "Standard", tenure: 5,  mrr: 79,  risk: 82, context: "Failed Routing Gateway" },
+            { uid: "USR-4310", tier: "Standard", tenure: 3,  mrr: 79,  risk: 74, context: "Failed Routing Gateway" },
+            { uid: "USR-3301", tier: "Basic",    tenure: 8,  mrr: 29,  risk: 71, context: "Zero User Session Ingress" }
         ];
 
-        // Computational summary calculation functions
-        function calculateKPIMetrics() {
-            const totalUsers = 1240;
-            const churnRate = 4.2; 
-            const retentionRate = 95.8;
-            const totalAtRiskRevenue = mockCustomerDataset.reduce((sum, item) => sum + item.mrr, 0);
+        recordIncrementCounter = streamingClusterCache.length;
 
-            document.getElementById('kpi-users').innerText = totalUsers.toLocaleString();
-            document.getElementById('kpi-retention').innerText = retentionRate + "%";
-            document.getElementById('kpi-churn').innerText = churnRate + "%";
-            document.getElementById('kpi-revenue').innerText = "$" + totalAtRiskRevenue.toLocaleString();
-        }
+        // Metadata definitions used to dynamically mock stream iterations
+        const tiersPool = ["Premium", "Standard", "Basic"];
+        const valuesPool = { "Premium": 149, "Standard": 79, "Basic": 29 };
+        const diagnosticPool = [
+            "Zero User Session Ingress", 
+            "Failed Routing Gateway", 
+            "Critical Overdue Ticket", 
+            "API Authentication Decay",
+            "Billing Integration Refusal"
+        ];
 
-        // Real-time What-If Business ROI Calculation Engine
-        function calculateROI() {
+        let donutChartInstance = null;
+
+        // 2. Data Pipeline Mathematical Operations Layer
+        function runDataPipelineCalculations() {
             const sliderValue = document.getElementById('roiSlider').value;
-            const totalAtRisk = mockCustomerDataset.reduce((sum, item) => sum + item.mrr, 0);
-            const savedRevenue = (totalAtRisk * (sliderValue / 100)).toFixed(2);
-            document.getElementById('roiResult').innerText = `$${Number(savedRevenue).toLocaleString()}`;
+            document.getElementById('sliderDisplay').innerText = sliderValue + "%";
+
+            // Aggregate metrics over cluster cache array
+            const totalMRRPool = streamingClusterCache.reduce((sum, item) => sum + item.mrr, 0);
+            const outlierCount = streamingClusterCache.filter(item => item.risk > 80).length;
+            
+            // Apply slider coefficient against high risk evaluation vector rows
+            const highRiskCapitalValuation = streamingClusterCache
+                .filter(item => item.risk > 80)
+                .reduce((sum, item) => sum + item.mrr, 0);
+            const mitigatedCapitalResult = (highRiskCapitalValuation * (sliderValue / 100)).toFixed(2);
+
+            // Update DOM UI Matrix Targets
+            document.getElementById('kpi-ingested').innerText = recordIncrementCounter;
+            document.getElementById('kpi-outliers').innerText = outlierCount;
+            document.getElementById('kpi-mrr').innerText = "$" + totalMRRPool.toLocaleString();
+            document.getElementById('kpi-mitigated').innerText = "$" + Number(mitigatedCapitalResult).toLocaleString();
+
+            // Dump data schema variables to terminal view container element
+            document.getElementById('json-debugger').innerText = JSON.stringify(streamingClusterCache, null, 2);
+            
+            updateVisualAnalytics();
         }
 
-        // Functional Data Export Engine generating tabular structure downloads natively
-        function exportTableToCSV() {
-            let csvContent = "data:text/csv;charset=utf-8,Customer ID,Tier,Tenure Months,MRR,Risk Score,Status\n";
-            mockCustomerDataset.forEach(row => {
-                csvContent += `${row.id},${row.tier},${row.tenure},${row.mrr},${row.score}%,${row.status}\n`;
-            });
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", "High_Risk_Churn_Data_Export.csv");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        // 3. Automated Stream Ingestion Simulation Logic
+        function triggerStreamIngestionCycle() {
+            if (!pipelineActive) return;
+
+            recordIncrementCounter++;
+            const generatedTier = tiersPool[Math.floor(Math.random() * tiersPool.length)];
+            const generatedRisk = Math.floor(Math.random() * (99 - 40 + 1)) + 40; // Simulated risk probability calculations 
+
+            const realTimePacket = {
+                uid: `USR-${Math.floor(1000 + Math.random() * 9000)}`,
+                tier: generatedTier,
+                tenure: Math.floor(Math.random() * 24) + 1,
+                mrr: valuesPool[generatedTier],
+                risk: generatedRisk,
+                context: diagnosticPool[Math.floor(Math.random() * diagnosticPool.length)]
+            };
+
+            // Unshift target packet into stack, enforcing an array size ceiling constraint of 8 records maximum
+            streamingClusterCache.unshift(realTimePacket);
+            if (streamingClusterCache.length > 8) {
+                streamingClusterCache.pop();
+            }
+
+            renderActiveGrid();
+            runDataPipelineCalculations();
         }
 
-        // Table Component Interface Generator Engine
-        function renderTable() {
-            const selectedTier = document.getElementById('tierFilter').value;
-            const tableBody = document.getElementById('data-table-body');
-            tableBody.innerHTML = ''; 
+        // 4. View Rendering Matrix Operations
+        function renderActiveGrid() {
+            const currentFilterSelection = document.getElementById('tierFilter').value;
+            const targetContainerBody = document.getElementById('stream-table-body');
+            targetContainerBody.innerHTML = '';
 
-            const filteredData = mockCustomerDataset.filter(item => {
-                return selectedTier === "All" || item.tier === selectedTier;
+            const computationalDataFilter = streamingClusterCache.filter(row => {
+                return currentFilterSelection === "All" || row.tier === currentFilterSelection;
             });
 
-            filteredData.forEach(row => {
-                const tr = document.createElement('tr');
-                tr.className = "hover:bg-slate-800/30 transition-all duration-150 group";
+            computationalDataFilter.forEach(item => {
+                const trElement = document.createElement('tr');
+                trElement.className = "hover:bg-slate-900/60 border-b border-slate-900/60 transition-all duration-75";
                 
-                // Set badge colors configuration based on conditional thresholds
-                const tierBadge = row.tier === 'Premium' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' : 
-                                  row.tier === 'Standard' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 
-                                  'bg-slate-800 text-slate-400 border border-slate-700/60';
-                                  
-                const scoreColor = row.score >= 90 ? 'text-rose-400' : 'text-amber-400';
-                const pulseAlert = row.score >= 90 ? 'animate-pulse bg-rose-500/10 border-rose-500/30 text-rose-400' : 'bg-amber-500/10 border-amber-500/20 text-amber-400';
+                const tierThemeClass = item.tier === 'Premium' ? 'text-purple-400 bg-purple-500/10 border border-purple-500/20' :
+                                       item.tier === 'Standard' ? 'text-cyan-400 bg-cyan-500/10 border border-cyan-500/20' :
+                                       'text-slate-400 bg-slate-800 border border-slate-700';
 
-                tr.innerHTML = `
-                    <td class="p-4 font-mono text-indigo-400 font-semibold tracking-wide">${row.id}</td>
-                    <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider ${tierBadge}">${row.tier}</span></td>
-                    <td class="p-4 font-medium text-slate-300">${row.tenure} months</td>
-                    <td class="p-4 font-mono font-bold text-white">$${row.mrr}</td>
-                    <td class="p-4">
-                        <div class="flex items-center space-x-2">
-                            <div class="w-20 bg-slate-800 h-1 rounded-full overflow-hidden">
-                                <div class="bg-gradient-to-r from-amber-500 to-rose-500 h-full" style="width: ${row.score}%"></div>
-                            </div>
-                            <span class="font-mono font-bold ${scoreColor}">${row.score}%</span>
-                        </div>
-                    </td>
-                    <td class="p-4"><span class="px-2 py-0.5 border rounded text-[10px] font-medium flex items-center w-fit gap-1 ${pulseAlert}">⚠️ ${row.status}</span></td>
+                const riskTextClass = item.risk >= 85 ? 'text-rose-400 font-bold' : 'text-amber-400';
+                const statusBadgeStyle = item.risk >= 85 ? 'bg-rose-500/10 border border-rose-500/20 text-rose-400 animate-pulse' : 'bg-slate-900 text-slate-400 border border-slate-800';
+
+                trElement.innerHTML = `
+                    <td class="p-3 font-semibold text-slate-400">${item.uid}</td>
+                    <td class="p-3"><span class="px-1.5 py-0.5 rounded text-[9px] font-bold ${tierThemeClass}">${item.tier.toUpperCase()}</span></td>
+                    <td class="p-3 text-slate-400">${item.tenure}m</td>
+                    <td class="p-3 font-bold text-white">$${item.mrr}</td>
+                    <td class="p-3"><span class="${riskTextClass}">${item.risk}%</span></td>
+                    <td class="p-3"><span class="px-1.5 py-0.5 rounded text-[9px] ${statusBadgeStyle}">⚠️ ${item.context}</span></td>
                 `;
-                tableBody.appendChild(tr);
+                targetContainerBody.appendChild(trElement);
             });
         }
 
-        // Data Chart Rendering Systems initialization
-        function initCharts() {
-            const lineCtx = document.getElementById('analyticsChart').getContext('2d');
-            new Chart(lineCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                    datasets: [
-                        { label: 'MRR Growth ($k)', data: [42, 45, 48, 51, 55, 60], borderColor: '#6366f1', backgroundColor: 'transparent', tension: 0.3, borderWidth: 3 },
-                        { label: 'Churn Volatility', data: [12, 19, 8, 15, 22, 11], borderColor: '#f43f5e', backgroundColor: 'transparent', borderDash: [4, 4], tension: 0.1 }
-                    ]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { labels: { color: '#94a3b8', font: { size: 10, family: 'monospace' } } } },
-                    scales: {
-                        x: { grid: { color: '#1e293b/30' }, ticks: { color: '#64748b', font: { size: 10 } } },
-                        y: { grid: { color: '#1e293b/30' }, ticks: { color: '#64748b', font: { size: 10 } } }
-                    }
-                }
+        // 5. Native CSV Content Compilation Output Generator Engine
+        function triggerCSVGeneration() {
+            let csvPayloadContent = "data:text/csv;charset=utf-8,UID_SIGNATURE,PROFILE_TIER,TENURE,VALUATION_MRR,RISK_SCORE,DIAGNOSTIC\n";
+            streamingClusterCache.forEach(node => {
+                csvPayloadContent += `${node.uid},${node.tier},${node.tenure},${node.mrr},${node.risk}%,${node.context}\n`;
             });
+            const schemaUriTarget = encodeURI(csvPayloadContent);
+            const anchorTriggerElement = document.createElement("a");
+            anchorTriggerElement.setAttribute("href", schemaUriTarget);
+            anchorTriggerElement.setAttribute("download", `STREAM_ETL_CACHE_EXPORT.csv`);
+            document.body.appendChild(anchorTriggerElement);
+            anchorTriggerElement.click();
+            document.body.removeChild(anchorTriggerElement);
+        }
 
-            const donutCtx = document.getElementById('donutChart').getContext('2d');
-            new Chart(donutCtx, {
+        function togglePipeline() {
+            pipelineActive = !pipelineActive;
+            const operationalButton = document.getElementById('pipelineBtn');
+            if(pipelineActive) {
+                operationalButton.innerText = "⏸ PAUSE STREAM";
+                operationalButton.className = "bg-rose-600 hover:bg-rose-500 text-white font-mono font-bold text-[10px] px-3 py-1.5 rounded border border-rose-500/20 cursor-pointer transition-colors";
+            } else {
+                operationalButton.innerText = "▶️ RESUME STREAM";
+                operationalButton.className = "bg-emerald-600 hover:bg-emerald-500 text-white font-mono font-bold text-[10px] px-3 py-1.5 rounded border border-emerald-500/20 cursor-pointer transition-colors";
+            }
+        }
+
+        // 6. Dynamic Chart Initialization Framework Canvas Management
+        function initChartGraphicsEngine() {
+            const canvasCtx = document.getElementById('donutChart').getContext('2d');
+            donutChartInstance = new Chart(canvasCtx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['UX Speed', 'Failed Invoices', 'Competitors'],
-                    datasets: [{ data: [45, 30, 25], backgroundColor: ['#6366f1', '#3b82f6', '#f43f5e'], borderWidth: 0 }]
+                    labels: ['Premium', 'Standard', 'Basic'],
+                    datasets: [{
+                        data: [0, 0, 0],
+                        backgroundColor: ['#6366f1', '#06b6d4', '#475569'],
+                        borderWidth: 0
+                    }]
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 10, family: 'monospace' } } } }
+                    plugins: { legend: { position: 'right', labels: { color: '#64748b', font: { size: 9, family: 'monospace' } } } }
                 }
             });
         }
 
-        // Script Trigger Execution Core
+        function updateVisualAnalytics() {
+            if (!donutChartInstance) return;
+            const countAllocation = { 'Premium': 0, 'Standard': 0, 'Basic': 0 };
+            streamingClusterCache.forEach(item => countAllocation[item.tier]++);
+            
+            donutChartInstance.data.datasets[0].data = [
+                countAllocation['Premium'], 
+                countAllocation['Standard'], 
+                countAllocation['Basic']
+            ];
+            donutChartInstance.update();
+        }
+
+        // Programmatic Bootstrapping Engine Hook Execution
         window.onload = function() {
-            calculateKPIMetrics();
-            calculateROI();
-            renderTable();
-            initCharts();
+            initChartGraphicsEngine();
+            renderActiveGrid();
+            runDataPipelineCalculations();
+            
+            // Start the asynchronous execution cycle simulations loop 
+            streamTimer = setInterval(triggerStreamIngestionCycle, 2500);
         };
     </script>
 </body>
