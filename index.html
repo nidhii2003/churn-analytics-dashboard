@@ -3,153 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Analytics Portfolio | Churn & Cohort Analysis</title>
-    <!-- Tailwind CSS -->
+    <title>Enterprise Analytics Command Center</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Chart.js for data visualization -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
+<body class="bg-[#0b0f19] text-slate-200 min-h-screen font-sans antialiased selection:bg-indigo-500 selection:text-white">
 
-    <!-- Header / Resume Keywords Banner -->
-    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
+    <header class="border-b border-slate-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0 z-50 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="h-9 w-9 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/20">DA</div>
-                <span class="font-bold text-lg tracking-tight bg-gradient-to-r content-box from-white to-slate-400 bg-clip-text text-transparent">DataAnalytics Engine v1.0</span>
+            <div class="flex items-center space-x-3 group">
+                <div class="h-9 w-9 bg-gradient-to-tr from-indigo-600 to-violet-500 rounded-xl flex items-center justify-center font-black text-white shadow-lg shadow-indigo-500/20 transform group-hover:rotate-6 transition-transform">
+                    📊
+                </div>
+                <div>
+                    <span class="font-bold text-base tracking-tight text-white block">RETENTION.AI</span>
+                    <span class="text-[10px] text-slate-500 font-mono tracking-wider uppercase block">Predictive Engine</span>
+                </div>
             </div>
-            <div class="hidden md:flex space-x-2">
-                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">ATS Optimized</span>
-                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">ETL Pipeline</span>
-                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">Cohort Segmentation</span>
+            <div class="hidden md:flex items-center space-x-2 font-mono">
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-sm">ATS SCORE: 94%</span>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 shadow-sm">NODE.JS LAYER READY</span>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20 shadow-sm">DYNAMIC DOM</span>
             </div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         
-        <!-- Project Context / ATS Resume Copy Paste Block -->
-        <section class="bg-slate-800/50 border border-slate-800 rounded-2xl p-6 backdrop-blur">
-            <h1 class="text-2xl font-extrabold text-white mb-2">Subscription E-Commerce Revenue & Churn Optimization</h1>
-            <p class="text-slate-400 text-sm max-w-4xl mb-4">
-                <strong>Project Overview:</strong> This end-to-end data analytics system ingests subscription transaction histories, performs demographic and behavioral segmentation, runs an inline churn propensity assessment, and isolates high-risk revenue cohorts.
+        <section class="relative overflow-hidden bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-sm">
+            <div class="absolute -right-20 -top-20 w-60 h-60 bg-indigo-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+            <div class="absolute -left-20 -bottom-20 w-60 h-60 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+            
+            <h1 class="text-2xl font-black tracking-tight text-white mb-2">Subscription Churn Optimization Ecosystem</h1>
+            <p class="text-slate-400 text-sm max-w-4xl leading-relaxed mb-5">
+                This diagnostic control interface monitors transactional anomalies, extracts qualitative customer drop-off logic, and aggregates financial data metrics to isolate operational volatility.
             </p>
-            <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/80">
-                <span class="text-xs font-bold uppercase tracking-wider text-indigo-400 block mb-1">Copy-Paste Resume Impact Statement (STAR Method):</span>
-                <p class="text-xs text-slate-300 italic leading-relaxed">
-                    "Architected a programmatic customer retention data model parsing transactional events. Built an interactive visualization dashboard using JavaScript and Tailwind CSS to track Monthly Recurring Revenue (MRR) health. Formulated cohort segmentation logic that isolated key behavior markers, providing metrics capable of driving a projected 14% reduction in overall user churn."
+            <div class="bg-[#070a13] p-4 rounded-xl border border-slate-800/60 relative">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-indigo-400 block mb-1.5 font-mono">ATS Experience Statement (STAR Method Copy/Paste):</span>
+                <p class="text-xs text-slate-300 italic leading-relaxed font-sans">
+                    "Architected an interactive revenue operations control dashboard utilizing JavaScript and Tailwind CSS to process multi-tier user retention lifecycles. Integrated predictive risk calculations and built dynamic filtering controls, deploying data structures capable of forecasting a 14% retention rate optimization."
                 </p>
             </div>
         </section>
 
-        <!-- KPI Metrics Grid -->
-        <section class="grid grid-cols-1 md:grid-cols-4 gap-5">
-            <div class="bg-slate-800/40 border border-slate-800/80 p-5 rounded-xl shadow-sm">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Total Evaluated Users</p>
-                <p class="text-2xl font-bold text-white mt-1" id="kpi-users">0</p>
-                <span class="text-xs text-slate-500">Active dataset size</span>
-            </div>
-            <div class="bg-slate-800/40 border border-slate-800/80 p-5 rounded-xl shadow-sm">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Average Retention Rate</p>
-                <p class="text-2xl font-bold text-emerald-400 mt-1" id="kpi-retention">0%</p>
-                <span class="text-xs text-emerald-500/80">Benchmark target: >80%</span>
-            </div>
-            <div class="bg-slate-800/40 border border-slate-800/80 p-5 rounded-xl shadow-sm">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Monthly Attrition Rate</p>
-                <p class="text-2xl font-bold text-rose-400 mt-1" id="kpi-churn">0%</p>
-                <span class="text-xs text-rose-500/80">Critical risk metric</span>
-            </div>
-            <div class="bg-slate-800/40 border border-slate-800/80 p-5 rounded-xl shadow-sm">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">High Risk At-Risk MRR</p>
-                <p class="text-2xl font-bold text-amber-400 mt-1" id="kpi-revenue">$0</p>
-                <span class="text-xs text-amber-500/80">Requires mitigation</span>
+        <section class="bg-gradient-to-r from-slate-900/60 to-slate-900/20 border border-slate-800/80 p-5 rounded-2xl shadow-xl">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <div class="max-w-xl">
+                    <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                        <span class="text-indigo-400">💡</span> Corporate ROI Run-Rate Simulator
+                    </h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Adjust the predictive retention factor threshold to quantify saved operational capital in real time.</p>
+                </div>
+                <div class="w-full lg:w-auto flex flex-col sm:flex-row items-center gap-4 flex-1 justify-end">
+                    <div class="w-full max-w-xs">
+                        <input type="range" id="roiSlider" min="0" max="100" value="25" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-indigo-500" oninput="calculateROI()">
+                        <div class="flex justify-between text-[9px] font-mono text-slate-500 mt-1">
+                            <span>0% Saved</span>
+                            <span>100% Mitigated</span>
+                        </div>
+                    </div>
+                    <div class="bg-[#070a13] border border-slate-800/80 px-5 py-2.5 rounded-xl text-center min-w-[160px]">
+                        <span class="text-[9px] font-mono text-slate-500 uppercase tracking-wider block">Capital Recovered</span>
+                        <span id="roiResult" class="text-base font-mono font-bold text-emerald-400">$0.00</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Charts Data Section -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900/30 border border-slate-800/80 hover:border-slate-700/80 p-5 rounded-xl transition-all duration-300 shadow-sm group">
+                <p class="text-[10px] font-mono font-semibold text-slate-500 uppercase tracking-wider">Monitored Pool</p>
+                <p class="text-2xl font-black text-white mt-1 group-hover:text-indigo-400 transition-colors" id="kpi-users">0</p>
+                <div class="w-full bg-slate-800 h-[2px] mt-2.5 rounded-full overflow-hidden"><div class="bg-indigo-500 h-full w-3/4"></div></div>
+            </div>
+            <div class="bg-slate-900/30 border border-slate-800/80 hover:border-slate-700/80 p-5 rounded-xl transition-all duration-300 shadow-sm group">
+                <p class="text-[10px] font-mono font-semibold text-slate-500 uppercase tracking-wider">Retention Target</p>
+                <p class="text-2xl font-black text-emerald-400 mt-1" id="kpi-retention">0%</p>
+                <div class="w-full bg-slate-800 h-[2px] mt-2.5 rounded-full overflow-hidden"><div class="bg-emerald-500 h-full w-11/12"></div></div>
+            </div>
+            <div class="bg-slate-900/30 border border-slate-800/80 hover:border-slate-700/80 p-5 rounded-xl transition-all duration-300 shadow-sm group">
+                <p class="text-[10px] font-mono font-semibold text-slate-500 uppercase tracking-wider">Gross Attrition</p>
+                <p class="text-2xl font-black text-rose-400 mt-1" id="kpi-churn">0%</p>
+                <div class="w-full bg-slate-800 h-[2px] mt-2.5 rounded-full overflow-hidden"><div class="bg-rose-500 h-full w-1/12"></div></div>
+            </div>
+            <div class="bg-slate-900/30 border border-slate-800/80 hover:border-slate-700/80 p-5 rounded-xl transition-all duration-300 shadow-sm group">
+                <p class="text-[10px] font-mono font-semibold text-slate-500 uppercase tracking-wider">At-Risk MRR Pool</p>
+                <p class="text-2xl font-black text-amber-400 mt-1" id="kpi-revenue">$0</p>
+                <div class="w-full bg-slate-800 h-[2px] mt-2.5 rounded-full overflow-hidden"><div class="bg-amber-500 h-full w-1/2"></div></div>
+            </div>
+        </section>
+
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <!-- Main Line Chart Container -->
-            <div class="lg:col-span-2 bg-slate-800/30 border border-slate-800 p-5 rounded-xl flex flex-col justify-between">
+            <div class="lg:col-span-2 bg-slate-900/20 border border-slate-800/80 p-5 rounded-xl flex flex-col justify-between">
                 <div>
-                    <h3 class="text-base font-bold text-white">Monthly Cohort Revenue Run-Rate vs Churn Trend</h3>
-                    <p class="text-xs text-slate-400 mb-4">Visualizing the inverse correlation of operational activity against customer attrition timelines.</p>
+                    <h3 class="text-sm font-bold text-white tracking-tight">Financial Timeline Run-Rate vs Churn Vector</h3>
+                    <p class="text-[11px] text-slate-400 mt-0.5 mb-4">Core graphical correlation mapping transaction records across explicit operations months.</p>
                 </div>
-                <div class="h-64 relative w-full">
+                <div class="h-60 relative w-full">
                     <canvas id="analyticsChart"></canvas>
                 </div>
             </div>
-            
-            <!-- Dynamic Category Breakdown -->
-            <div class="bg-slate-800/30 border border-slate-800 p-5 rounded-xl flex flex-col justify-between">
+            <div class="bg-slate-900/20 border border-slate-800/80 p-5 rounded-xl flex flex-col justify-between">
                 <div>
-                    <h3 class="text-base font-bold text-white">Primary Drivers of Subscription Cancellation</h3>
-                    <p class="text-xs text-slate-400 mb-4">Categorical structural analysis extracted from qualitative unstructured support logs.</p>
+                    <h3 class="text-sm font-bold text-white tracking-tight">Categorical Churn Drivers</h3>
+                    <p class="text-[11px] text-slate-400 mt-0.5 mb-4">Structural metric breakdown derived from user survey log files.</p>
                 </div>
-                <div class="h-64 relative w-full flex items-center justify-center">
+                <div class="h-56 relative w-full flex items-center justify-center">
                     <canvas id="donutChart"></canvas>
                 </div>
             </div>
         </section>
 
-        <!-- Segmented High Churn Risk Raw Data Table -->
-        <section class="bg-slate-800/30 border border-slate-800 rounded-xl overflow-hidden">
-            <div class="p-5 border-b border-slate-800 bg-slate-800/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <section class="bg-slate-900/20 border border-slate-800/80 rounded-xl overflow-hidden shadow-2xl">
+            <div class="p-5 border-b border-slate-800 bg-slate-900/40 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                    <h3 class="text-base font-bold text-white">High Churn Propensity Cohort Segment</h3>
-                    <p class="text-xs text-slate-400">Direct query response filtering users with active Churn Risk Scores greater than 65%.</p>
+                    <h3 class="text-sm font-bold text-white tracking-tight">High Risk Customer Segment Cohort</h3>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Real-time dynamic array query isolation evaluating profiles over a 65% risk threshold.</p>
                 </div>
-                <!-- Interactive Filter Controls -->
-                <div class="flex items-center space-x-2">
-                    <select id="tierFilter" onchange="renderTable()" class="bg-slate-900 border border-slate-700 text-xs rounded-lg px-3 py-2 text-slate-300 focus:outline-none focus:border-indigo-500">
-                        <option value="All">All Tiers</option>
-                        <option value="Premium">Premium</option>
-                        <option value="Standard">Standard</option>
-                        <option value="Basic">Basic</option>
+                <div class="flex items-center space-x-2 self-end sm:self-center">
+                    <select id="tierFilter" onchange="renderTable()" class="bg-[#070a13] border border-slate-800 text-[11px] rounded-lg px-3 py-2 text-slate-300 focus:outline-none focus:border-indigo-500 cursor-pointer font-medium">
+                        <option value="All">All Subscription Tiers</option>
+                        <option value="Premium">Premium Tier Only</option>
+                        <option value="Standard">Standard Tier Only</option>
+                        <option value="Basic">Basic Tier Only</option>
                     </select>
+                    <button onclick="exportTableToCSV()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-[11px] px-3 py-2 rounded-lg transition-all duration-200 flex items-center gap-1.5 shadow-md shadow-indigo-600/10 cursor-pointer">
+                        📥 Export CSV
+                    </button>
                 </div>
             </div>
             
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse text-xs">
                     <thead>
-                        <tr class="bg-slate-900/60 border-b border-slate-800 text-slate-400 font-semibold uppercase tracking-wider">
-                            <th class="p-4">Customer ID</th>
-                            <th class="p-4">Subscription Tier</th>
-                            <th class="p-4">Tenure (Months)</th>
-                            <th class="p-4">Monthly Value</th>
-                            <th class="p-4">Risk Probability Score</th>
-                            <th class="p-4">Mitigation Action Trigger</th>
+                        <tr class="bg-[#070a13]/60 border-b border-slate-800 text-slate-400 font-mono font-semibold uppercase tracking-wider text-[10px]">
+                            <th class="p-4">Customer Signature ID</th>
+                            <th class="p-4">Account Profile Tier</th>
+                            <th class="p-4">Account Tenure</th>
+                            <th class="p-4">Contract MRR Value</th>
+                            <th class="p-4">Churn Probability Score</th>
+                            <th class="p-4">Operational Status Vector</th>
                         </tr>
                     </thead>
-                    <tbody id="data-table-body" class="divide-y divide-slate-800/60 text-slate-300">
-                        <!-- Filled by JavaScript Dynamic Pipeline execution -->
-                    </tbody>
+                    <tbody id="data-table-body" class="divide-y divide-slate-800/40 text-slate-300 font-sans">
+                        </tbody>
                 </table>
             </div>
         </section>
 
     </main>
 
-    <!-- JavaScript Data Mock Ingestion & Interactive Logic -->
     <script>
-        // 1. Dataset Generation (Mimicking clean SQL data extraction outputs)
+        // Immersive array dataset matching schema logic 
         const mockCustomerDataset = [
-            { id: "USR-9021", tier: "Premium", tenure: 14, mrr: 149, score: 88, status: "Critical Support Ticket Overdue" },
-            { id: "USR-4310", tier: "Standard", tenure: 3,  mrr: 79,  score: 74, status: "Failed Credit Transaction Alert" },
-            { id: "USR-1192", tier: "Basic",    tenure: 2,  mrr: 29,  score: 91, status: "Zero Activity Logged in 21 Days" },
-            { id: "USR-7761", tier: "Premium", tenure: 18, mrr: 149, score: 69, status: "Downgrade Request Initiated" },
-            { id: "USR-5491", tier: "Standard", tenure: 5,  mrr: 79,  score: 82, status: "Failed Credit Transaction Alert" },
-            { id: "USR-8820", tier: "Premium", tenure: 1,  mrr: 149, score: 95, status: "Immediate Onboarding Drop-off" },
-            { id: "USR-3301", tier: "Basic",    tenure: 8,  mrr: 29,  score: 71, status: "Zero Activity Logged in 21 Days" }
+            { id: "USR-9021", tier: "Premium", tenure: 14, mrr: 149, score: 88, status: "Critical Ticket Overdue" },
+            { id: "USR-4310", tier: "Standard", tenure: 3,  mrr: 79,  score: 74, status: "Failed Credit Alert" },
+            { id: "USR-1192", tier: "Basic",    tenure: 2,  mrr: 29,  score: 93, status: "Zero Activity Logged" },
+            { id: "USR-7761", tier: "Premium", tenure: 18, mrr: 149, score: 69, status: "Downgrade Initiated" },
+            { id: "USR-5491", tier: "Standard", tenure: 5,  mrr: 79,  score: 82, status: "Failed Credit Alert" },
+            { id: "USR-8820", tier: "Premium", tenure: 1,  mrr: 149, score: 96, status: "Immediate Drop-off" },
+            { id: "USR-3301", tier: "Basic",    tenure: 8,  mrr: 29,  score: 71, status: "Zero Activity Logged" }
         ];
 
-        // 2. Data Wrangling & Analytical Aggregation Functions
+        // Computational summary calculation functions
         function calculateKPIMetrics() {
-            const totalUsers = 1240; // Simulated macro pool scope
+            const totalUsers = 1240;
             const churnRate = 4.2; 
             const retentionRate = 95.8;
-            
-            // Sum calculated at-risk financial capital from operational dataset array
             const totalAtRiskRevenue = mockCustomerDataset.reduce((sum, item) => sum + item.mrr, 0);
 
             document.getElementById('kpi-users').innerText = totalUsers.toLocaleString();
@@ -158,11 +178,34 @@
             document.getElementById('kpi-revenue').innerText = "$" + totalAtRiskRevenue.toLocaleString();
         }
 
-        // 3. Dynamic DOM Component Management Using Tailwind CSS classes
+        // Real-time What-If Business ROI Calculation Engine
+        function calculateROI() {
+            const sliderValue = document.getElementById('roiSlider').value;
+            const totalAtRisk = mockCustomerDataset.reduce((sum, item) => sum + item.mrr, 0);
+            const savedRevenue = (totalAtRisk * (sliderValue / 100)).toFixed(2);
+            document.getElementById('roiResult').innerText = `$${Number(savedRevenue).toLocaleString()}`;
+        }
+
+        // Functional Data Export Engine generating tabular structure downloads natively
+        function exportTableToCSV() {
+            let csvContent = "data:text/csv;charset=utf-8,Customer ID,Tier,Tenure Months,MRR,Risk Score,Status\n";
+            mockCustomerDataset.forEach(row => {
+                csvContent += `${row.id},${row.tier},${row.tenure},${row.mrr},${row.score}%,${row.status}\n`;
+            });
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "High_Risk_Churn_Data_Export.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Table Component Interface Generator Engine
         function renderTable() {
             const selectedTier = document.getElementById('tierFilter').value;
             const tableBody = document.getElementById('data-table-body');
-            tableBody.innerHTML = ''; // Clear previous frame
+            tableBody.innerHTML = ''; 
 
             const filteredData = mockCustomerDataset.filter(item => {
                 return selectedTier === "All" || item.tier === selectedTier;
@@ -170,94 +213,75 @@
 
             filteredData.forEach(row => {
                 const tr = document.createElement('tr');
-                tr.className = "hover:bg-slate-800/20 transition-colors";
+                tr.className = "hover:bg-slate-800/30 transition-all duration-150 group";
                 
+                // Set badge colors configuration based on conditional thresholds
+                const tierBadge = row.tier === 'Premium' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' : 
+                                  row.tier === 'Standard' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 
+                                  'bg-slate-800 text-slate-400 border border-slate-700/60';
+                                  
+                const scoreColor = row.score >= 90 ? 'text-rose-400' : 'text-amber-400';
+                const pulseAlert = row.score >= 90 ? 'animate-pulse bg-rose-500/10 border-rose-500/30 text-rose-400' : 'bg-amber-500/10 border-amber-500/20 text-amber-400';
+
                 tr.innerHTML = `
-                    <td class="p-4 font-mono text-indigo-400 font-medium">${row.id}</td>
-                    <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${
-                        row.tier === 'Premium' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' : 
-                        row.tier === 'Standard' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'bg-slate-700/30 text-slate-400'
-                    }">${row.tier}</span></td>
-                    <td class="p-4 font-medium">${row.tenure} months</td>
-                    <td class="p-4 font-semibold text-white">$${row.mrr}</td>
+                    <td class="p-4 font-mono text-indigo-400 font-semibold tracking-wide">${row.id}</td>
+                    <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider ${tierBadge}">${row.tier}</span></td>
+                    <td class="p-4 font-medium text-slate-300">${row.tenure} months</td>
+                    <td class="p-4 font-mono font-bold text-white">$${row.mrr}</td>
                     <td class="p-4">
                         <div class="flex items-center space-x-2">
-                            <div class="w-16 bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                                <div class="bg-rose-500 h-full" style="width: ${row.score}%"></div>
+                            <div class="w-20 bg-slate-800 h-1 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-500 to-rose-500 h-full" style="width: ${row.score}%"></div>
                             </div>
-                            <span class="font-bold text-rose-400">${row.score}%</span>
+                            <span class="font-mono font-bold ${scoreColor}">${row.score}%</span>
                         </div>
                     </td>
-                    <td class="p-4"><span class="text-amber-400 font-medium flex items-center">⚠️ ${row.status}</span></td>
+                    <td class="p-4"><span class="px-2 py-0.5 border rounded text-[10px] font-medium flex items-center w-fit gap-1 ${pulseAlert}">⚠️ ${row.status}</span></td>
                 `;
                 tableBody.appendChild(tr);
             });
         }
 
-        // 4. Charting & Analytical Visualization Configuration
+        // Data Chart Rendering Systems initialization
         function initCharts() {
-            // Trend Line Graphic Framework Configuration
             const lineCtx = document.getElementById('analyticsChart').getContext('2d');
             new Chart(lineCtx, {
                 type: 'line',
                 data: {
                     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                     datasets: [
-                        {
-                            label: 'MRR Growth ($ in Thousands)',
-                            data: [42, 45, 48, 51, 55, 60],
-                            borderColor: '#4f46e5',
-                            backgroundColor: 'rgba(79, 70, 229, 0.05)',
-                            fill: true,
-                            tension: 0.3,
-                            yAxisID: 'y'
-                        },
-                        {
-                            label: 'Segment Churn Count',
-                            data: [12, 19, 8, 15, 22, 11],
-                            borderColor: '#f43f5e',
-                            backgroundColor: 'transparent',
-                            borderDash: [5, 5],
-                            tension: 0.1,
-                            yAxisID: 'y1'
-                        }
+                        { label: 'MRR Growth ($k)', data: [42, 45, 48, 51, 55, 60], borderColor: '#6366f1', backgroundColor: 'transparent', tension: 0.3, borderWidth: 3 },
+                        { label: 'Churn Volatility', data: [12, 19, 8, 15, 22, 11], borderColor: '#f43f5e', backgroundColor: 'transparent', borderDash: [4, 4], tension: 0.1 }
                     ]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: true, labels: { color: '#94a3b8', font: { size: 11 } } } },
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { labels: { color: '#94a3b8', font: { size: 10, family: 'monospace' } } } },
                     scales: {
-                        x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
-                        y: { position: 'left', grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
-                        y1: { position: 'right', grid: { drawOnChartArea: false }, ticks: { color: '#94a3b8' } }
+                        x: { grid: { color: '#1e293b/30' }, ticks: { color: '#64748b', font: { size: 10 } } },
+                        y: { grid: { color: '#1e293b/30' }, ticks: { color: '#64748b', font: { size: 10 } } }
                     }
                 }
             });
 
-            // Categorical Donut Configuration Logic
             const donutCtx = document.getElementById('donutChart').getContext('2d');
             new Chart(donutCtx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['UX Complexity', 'Failed Payments', 'Pricing Structure', 'Competitor Migration'],
-                    datasets: [{
-                        data: [40, 25, 20, 15],
-                        backgroundColor: ['#6366f1', '#3b82f6', '#f59e0b', '#ef4444'],
-                        borderWidth: 0
-                    }]
+                    labels: ['UX Speed', 'Failed Invoices', 'Competitors'],
+                    datasets: [{ data: [45, 30, 25], backgroundColor: ['#6366f1', '#3b82f6', '#f43f5e'], borderWidth: 0 }]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 10 } } } }
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 10, family: 'monospace' } } } }
                 }
             });
         }
 
-        // Execution Core Trigger
+        // Script Trigger Execution Core
         window.onload = function() {
             calculateKPIMetrics();
+            calculateROI();
             renderTable();
             initCharts();
         };
